@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "62ca52a2-3704-43cc-a3ed-031c89717fa2",
+		"name": "API Capstone2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31145982"
+	},
+	"item": [
+		{
+			"name": "Auth - Sign Up Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"taiKhoan\" : \"phamsang1234\", \n    \"hoTen\" : \"Phạm Quang Sáng\", \n    \"email\" : \"sangpham1234@gmail.com\",\n    \"soDT\" : \"0974777444\", \n    \"matKhau\" : \"sangpham1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/auth/signup-admin"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Sign Up Khach Hang",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"taiKhoan\" : \"phucnguyen1234\",\n    \"hoTen\" : \"Nguyễn Lương Phúc\",\n    \"email\" : \"phucnguyen1234@gmail.com\",\n    \"soDT\" : \"0977123123\",\n    \"matKhau\" : \"phucnguyen1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/auth/signup-KH"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Dang Nhap (Trang Khach Hang)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"taiKhoan\" : \"daotruong1234\",\n    \"matKhau\" : \"daotruong1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Dang Nhap (Admin)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"taiKhoan\" : \"thangnguyen1234\",\n    \"matKhau\" : \"thangnguyen1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/auth/login-admin"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25ndXllbjEyMzRAZ21haWwuY29tIiwibWFMb2FpTmd1b2lEdW5nIjoiQWRtaW4iLCJrZXkiOjE3MDU5ODIyNDMwMjB9LCJpYXQiOjE3MDU5ODIyNDMsImV4cCI6MTcwNTk4Mjg0M30.4ALF_FPMR2FaJW3YVZ2ZSpeoWY--lknFFVmwMGzLBvw",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8080/auth/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Lay danh sach loai user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/user/get-user-type"
+			},
+			"response": []
+		},
+		{
+			"name": "User - lay danh sach Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/user/get-users"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Lay danh sach user phan trang",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25uZ3V5ZW4xMjM0QGdtYWlsLmNvbSIsIm1hTG9haU5ndW9pRHVuZyI6IkFkbWluIiwia2V5IjoxNzA1NDI5NDI4NTM2fSwiaWF0IjoxNzA1NDI5NDI4LCJleHAiOjE3MDYyOTM0Mjh9.onvBTzgLVIM8fPR3BVdJr9Hz0ESV_GFFpaUjO6swgt4",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8080/user/get-users-by-page/1"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Lay thong tin user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25uZ3V5ZW4xMjM0QGdtYWlsLmNvbSIsIm1hTG9haU5ndW9pRHVuZyI6IkFkbWluIiwia2V5IjoxNzA1NDI5NDI4NTM2fSwiaWF0IjoxNzA1NDI5NDI4LCJleHAiOjE3MDYyOTM0Mjh9.onvBTzgLVIM8fPR3BVdJr9Hz0ESV_GFFpaUjO6swgt4",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8080/user/get-user-profile"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Search User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25ndXllbjEyMzRAZ21haWwuY29tIiwibWFMb2FpTmd1b2lEdW5nIjoiQWRtaW4iLCJrZXkiOjE3MDU2NzA4ODEzNDl9LCJpYXQiOjE3MDU2NzA4ODEsImV4cCI6MTcwNjUzNDg4MX0.qF_2Y7115hvk7SON50GlroFjnuXAHzdWp-DN59XY2Vg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"searchKeyword\" : \"Sang\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/user/search-user"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Search User phan trang",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25ndXllbjEyMzRAZ21haWwuY29tIiwibWFMb2FpTmd1b2lEdW5nIjoiQWRtaW4iLCJrZXkiOjE3MDU2NzA4ODEzNDl9LCJpYXQiOjE3MDU2NzA4ODEsImV4cCI6MTcwNjUzNDg4MX0.qF_2Y7115hvk7SON50GlroFjnuXAHzdWp-DN59XY2Vg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"searchKeyword\" : \"Thang\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/user/search-user-pagination/1"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Cap Nhat Thong Tin Nguoi Dung",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25uZ3V5ZW4xMjM0QGdtYWlsLmNvbSIsIm1hTG9haU5ndW9pRHVuZyI6IkFkbWluIiwia2V5IjoxNzA1NDI5NDI4NTM2fSwiaWF0IjoxNzA1NDI5NDI4LCJleHAiOjE3MDYyOTM0Mjh9.onvBTzgLVIM8fPR3BVdJr9Hz0ESV_GFFpaUjO6swgt4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"hoTen\" : \"Nguyễn Thị Hoa Thắng\",\n    \"email\" : \"thangnguyen1234@gmail.com\",\n    \"soDT\" : \"0974777777\",\n    \"maLoaiNguoiDung\" : \"Admin\",\n    \"matKhau\" : \"thangnguyen1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/user/update-user"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Xoá Người Dùng (byUser)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoic2FuZ3BodW5nMTIzNCIsImVtYWlsIjoic2FuZ3BodW5nMTIzNEBnbWFpbC5jb20iLCJtYUxvYWlOZ3VvaUR1bmciOiJLaGFjaEhhbmciLCJrZXkiOjE3MDU0Mjk0MjMxODR9LCJpYXQiOjE3MDU0Mjk0MjMsImV4cCI6MTcwNjI5MzQyM30.24fAFC2HL62CIu6FIm4cPpWZytB1dB4eqn3ifec5qoI",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8080/user/delete-user"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Xoá người dùng (byAdmin))",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25ndXllbjEyMzRAZ21haWwuY29tIiwibWFMb2FpTmd1b2lEdW5nIjoiQWRtaW4iLCJrZXkiOjE3MDU5ODIzNzA5NDB9LCJpYXQiOjE3MDU5ODIzNzAsImV4cCI6MTcwNjg0NjM3MH0.9JOCwE-K-RYCvAGfSLaqKJhqLupzq4hIVrgS4fimNiQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"taiKhoan\" : \"Phamanh1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/user/delete-user-by-admin"
+			},
+			"response": []
+		},
+		{
+			"name": "Cinema - Lay danh sach he thong rap",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/cinema/get-cinema-systems"
+			},
+			"response": []
+		},
+		{
+			"name": "Cinema - Lay Thong tin he thong rap",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/cinema/get-system-info/BHDStar"
+			},
+			"response": []
+		},
+		{
+			"name": "Cinema - Lay thong tin cum rap theo he thong",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cinema/get-cinemas-by-system/BHDStar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cinema",
+						"get-cinemas-by-system",
+						"BHDStar"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Showtime -  Lich Chieu theo he thong rap",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/showtime/get-showtime-by-cinema-system/CineStar"
+			},
+			"response": []
+		},
+		{
+			"name": "Showtime - Lich chieu theo Phim",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/showtime/get-showtime-by-movie/1329"
+			},
+			"response": []
+		},
+		{
+			"name": "Showtime - Lay danh sach phong ve",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25ndXllbjEyMzRAZ21haWwuY29tIiwibWFMb2FpTmd1b2lEdW5nIjoiQWRtaW4iLCJrZXkiOjE3MDU5Nzk3MTg3MjF9LCJpYXQiOjE3MDU5Nzk3MTgsImV4cCI6MTcwNjg0MzcxOH0.RdqYVThNvKDHizuMyjHwUEG5yMo1DSIVpGFThi4rDyA",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8080/showtime/get-seats/16909"
+			},
+			"response": []
+		},
+		{
+			"name": "Showtime - Dat Ve",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoic2FuZ3BodW5nMTIzNCIsImVtYWlsIjoic2FuZ3BodW5nMTIzNEBnbWFpbC5jb20iLCJtYUxvYWlOZ3VvaUR1bmciOiJLaGFjaEhhbmciLCJrZXkiOjE3MDU0Mjk0MjMxODR9LCJpYXQiOjE3MDU0Mjk0MjMsImV4cCI6MTcwNjI5MzQyM30.24fAFC2HL62CIu6FIm4cPpWZytB1dB4eqn3ifec5qoI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"maGhe\" : 52385\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/showtime/book-seat/16909"
+			},
+			"response": []
+		},
+		{
+			"name": "Showtime - Post Lich Chieu",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25uZ3V5ZW4xMjM0QGdtYWlsLmNvbSIsIm1hTG9haU5ndW9pRHVuZyI6IkFkbWluIiwia2V5IjoxNzA1NDI5NDI4NTM2fSwiaWF0IjoxNzA1NDI5NDI4LCJleHAiOjE3MDYyOTM0Mjh9.onvBTzgLVIM8fPR3BVdJr9Hz0ESV_GFFpaUjO6swgt4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"maLichChieu\" : 43173, \n    \"maPhim\" : 13686, \n    \"maRap\" : 459,\n    \"ngayChieuGioChieu\" : \"2023-01-26 12:10:00\",\n    \"giaVe\" : 75000,\n    \"thoiLuong\" : 120 \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/showtime/post-showtime"
+			},
+			"response": []
+		},
+		{
+			"name": "Movie - Lấy danh sách banners",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/movie/get-banners"
+			},
+			"response": []
+		},
+		{
+			"name": "Movie - Post Banner",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25ndXllbjEyMzRAZ21haWwuY29tIiwibWFMb2FpTmd1b2lEdW5nIjoiQWRtaW4iLCJrZXkiOjE3MDU2NzA4ODEzNDl9LCJpYXQiOjE3MDU2NzA4ODEsImV4cCI6MTcwNTY3MTQ4MX0.8ojtpoXgK6FrRuPKTjMOMa0FFVcCb--BIl8U-EeA6A4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"maPhim\" : 1283\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/movie/post-banner"
+			},
+			"response": []
+		},
+		{
+			"name": "Movie - Lay danh sach phim",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/movie/get-movies"
+			},
+			"response": []
+		},
+		{
+			"name": "Movie - Lay danh sach phim Phan Trang",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/movie/get-movies-pagination/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Movie - Lay danh sach phim theo ngay",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tenPhim\" : \"khá bảnh\",\n    \"tuNgay\" : \"2024-01-08\",\n    \"denNgay\" : \"2024-01-10\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/movie/get-movies-by-date/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Movie - Lay chi tiet phim theo Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/movie/get-movie-by-id/13660"
+			},
+			"response": []
+		},
+		{
+			"name": "Movie - Post Phim",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25uZ3V5ZW4xMjM0QGdtYWlsLmNvbSIsIm1hTG9haU5ndW9pRHVuZyI6IkFkbWluIiwia2V5IjoxNzA1MjMyNTk0NTY1fSwiaWF0IjoxNzA1MjMyNTk0LCJleHAiOjE3MDYwOTY1OTR9.s4I0C1w2_MX4dO6ZVhQkkwdO9LG6_joD2JPFYSVQUio",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"maPhim\" : \"1285\", \n    \"tenPhim\" : \"Lật Mặt\" , \n    \"biDanh\" : \"Lat Mat\", \n    \"trailer\" : \"https://www.youtube.com/watch?v=ZFoIBlb5BDw\" ,\n    \"hinhAnh\" : \"https://movienew.cybersoft.edu.vn/hinhanh/lat-mat-48h.png\", \n    \"moTa\" :\"OFFICIAL TRAILER Phim điện ảnh LẬT MẶT phần 4 - Dự kiến khởi chiếu tháng 15/5/2015 - www.facebook.com/latmatmovie . Thể loại: Hành Động . Độ dài: 90 phút Diễn viên Kim Xuân, Lý Hải, diễn viên hài Trường Giang, Võ Thành Tâm, LâMinh Thắng, Việt Anh, Phi Phụng, Hoàng Sơn, Cát Phượng, Long Đẹp Trai, Hứa Minh Đạt, Quách Ngọc Tuyên, Trọng Hải, Nam Thư, Tiết Cương, Linh Napie, Mỹ Hoà...\",\n    \"maNhom\" : \"GP01\", \n    \"ngayKhoiChieu\" : \"2021-05-01\",\n    \"danhGia\" : \"7\",\n    \"hot\" : \"1\",\n    \"dangChieu\" : \"1\",\n    \"sapChieu\" : \"0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/movie/post-movie"
+			},
+			"response": []
+		},
+		{
+			"name": "Movie - Chinh sua Phim",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25ndXllbjEyMzRAZ21haWwuY29tIiwibWFMb2FpTmd1b2lEdW5nIjoiQWRtaW4iLCJrZXkiOjE3MDU5ODIzNzA5NDB9LCJpYXQiOjE3MDU5ODIzNzAsImV4cCI6MTcwNjg0NjM3MH0.9JOCwE-K-RYCvAGfSLaqKJhqLupzq4hIVrgS4fimNiQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"maPhim\" : \"4666\", \n    \"tenPhim\" : \"Joker\" , \n    \"biDanh\" : \"Joker\", \n    \"trailer\" : \"https://youtu.be/zAGVQLHvwOY?si=OyzkBxd5hpHp0THJ\" ,\n    \"hinhAnh\" : \"https://movienew.cybersoft.edu.vn/hinhanh/joker_gp01.jpg\", \n    \"moTa\" :\"Storyline: In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker\", \n    \"maNhom\" : \"GP01\", \n    \"ngayKhoiChieu\" : \"2021-05-01\",\n    \"danhGia\" : \"6\",\n    \"hot\" : \"0\",\n    \"dangChieu\" : \"0\",\n    \"sapChieu\" : \"0\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/movie/update-movie"
+			},
+			"response": []
+		},
+		{
+			"name": "Movie - Xoa Phim",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaUtob2FuIjoidGhhbmduZ3V5ZW4xMjM0IiwiZW1haWwiOiJ0aGFuZ25ndXllbjEyMzRAZ21haWwuY29tIiwibWFMb2FpTmd1b2lEdW5nIjoiQWRtaW4iLCJrZXkiOjE3MDU5ODIzNzA5NDB9LCJpYXQiOjE3MDU5ODIzNzAsImV4cCI6MTcwNjg0NjM3MH0.9JOCwE-K-RYCvAGfSLaqKJhqLupzq4hIVrgS4fimNiQ",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8080/movie/delete-movie/4667"
+			},
+			"response": []
+		}
+	]
+}
